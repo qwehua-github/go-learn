@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+option go_package = "./";
+// 消息体 一个package中不可以定义同名的消息体
+//  消息体编号
+message Teacher{
+  int32 age = 1;
+  string name = 2;
+}
+
+//定义服务
+service SayName {
+  rpc SayHello (Teacher) returns (Teacher);
+}
